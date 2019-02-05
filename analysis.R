@@ -3,7 +3,7 @@ library(ggplot2)
 library(scales)
 
 # Uncomment the below line and set the appropriate 
-# setwd("F:/Data Analysis/311")
+# setwd("F:/Data Analysis/SR2018")
 data = read.csv("311-dataset.csv")
 
 # Check the structure of the data, e.g. factor levels.
@@ -36,14 +36,16 @@ ggplot(data, aes(x=DayOfWeek)) + geom_bar()
 #Service type plot
 ggplot(data, aes(x=Service.Request.Type)) + geom_bar() + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
 
-#Section Unit wise plot (can do for individual division?)
+#Section Unit wise plot
 ggplot(data, aes(x=Section)) + geom_bar() + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
 
 #Divsion wise plot
-ggplot(data[data$Division == "Municipal Licensing & Standards",], aes(x=Section)) + geom_bar() + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
-ggplot(data[data$Division == "Toronto Water",], aes(x=Section)) + geom_bar() + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
-ggplot(data[data$Division == "Transportation Services",], aes(x=Section)) + geom_bar() + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
-ggplot(data[data$Division == "Solid Waste Management Services",], aes(x=Section)) + geom_bar() + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
+ggplot(data[data$Division == "Municipal Licensing & Standards",], aes(x=Section)) + geom_bar() + ggtitle("Municipal Licensing & Standards") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5), plot.title = element_text(hjust = 0.5))
+ggplot(data[data$Division == "Toronto Water",], aes(x=Section)) + geom_bar() + ggtitle("Toronto Water") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5), plot.title = element_text(hjust = 0.5))
+ggplot(data[data$Division == "Solid Waste Management Services",], aes(x=Section)) + geom_bar() + ggtitle("Solid Waste Management Services") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5), plot.title = element_text(hjust = 0.5))
+ggplot(data[data$Division == "Transportation Services",], aes(x=Section)) + geom_bar() + ggtitle("Transportation Services ") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5), plot.title = element_text(hjust = 0.5))
+ggplot(data[data$Division == "Urban Forestry",], aes(x=Section)) + geom_bar() + ggtitle("Transportation Services ") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5), plot.title = element_text(hjust = 0.5))
+ggplot(data[data$Division == "Transportation Services",], aes(x=Section)) + geom_bar() + ggtitle("Transportation Services ") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5), plot.title = element_text(hjust = 0.5))
 
 #Ward wise plot
 ggplot(data, aes(x=Ward)) + geom_bar() + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
