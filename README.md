@@ -7,3 +7,5 @@ The solution requires the folowing R libraries:
 1. dplyr
 2. ggplot2
 3. scales
+
+The writeup analysis can be found here: https://thedataardent.com/data-visualizations-of-toronto-311-service-requests-2018/
